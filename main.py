@@ -12,6 +12,7 @@ async def connect(connection):
     res = await handler.con(connection, 'get', '/lol-summoner/v1/current-summoner')
     resultado = await res.json()
     print(f"Summoner {resultado['displayName']} logged in")
+    await handler.getAllRunes(connection)
 
 @connector.close
 async def disconnect(connection):
