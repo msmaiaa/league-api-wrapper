@@ -15,6 +15,3 @@ class Handler:
             await asyncio.sleep(2)
             await self.con(connection, 'post', '/lol-matchmaking/v1/ready-check/decline')
 
-    async def getAllRunes(self, connection):
-        runes = await self.con(connection, 'get', '/lol-perks/v1/perks')
-        print(await runes.json())
