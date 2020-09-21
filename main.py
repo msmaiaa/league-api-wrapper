@@ -28,6 +28,7 @@ async def disconnect(connection):
 @connector.ws.register('/lol-summoner/v1/current-summoner', event_types=('UPDATE',))
 async def icon_changed(connection, event):
     print(f'The summoner {event.data["displayName"]} was updated.')
+    print(event.data["summonerId"])
 
 @connector.ws.register('/lol-champ-select/v1/session', event_types=('UPDATE',))
 async def champion_changed(connection, event):

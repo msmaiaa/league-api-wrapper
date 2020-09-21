@@ -2,8 +2,8 @@ import asyncio
 
 class Handler:
 
-    async def con(self, connection, method, url):
-        return await connection.request(method, url)
+    async def con(self, connection, method, url, data=None):
+        return await connection.request(method, url, data=data)
 
     async def queueHandler(self,connection, condition):
         #decline or accept match
