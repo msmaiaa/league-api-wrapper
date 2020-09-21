@@ -35,7 +35,6 @@ async def champion_changed(connection, event):
     summonerId = await getId(connection)
     for i in event.data["myTeam"]:
         if i["summonerId"] == summonerId:
-            #print(i["championId"])
             if i != 0:
                 await runes.getRunes(connection, i["championId"], i["assignedPosition"])
     
